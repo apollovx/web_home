@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact ApolloVX | Vending Solutions Inquiry</title>
+  <meta name="description" content="Contact ApolloVX to request a free vending solution evaluation for your business or healthcare facility.">
+
+  <style>
+    :root {
+      --primary: #0b1f3b;
+      --accent: #f5a623;
+      --light: #f7f9fc;
+      --dark: #1a1a1a;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, sans-serif; color: var(--dark); background: white; line-height: 1.6; }
+    header { background: var(--primary); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
+    header h1 { font-size: 1.4rem; margin: 0; letter-spacing: 0.5px; }
+    nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: 500; }
+
+    section { padding: 80px 40px; max-width: 800px; margin: auto; }
+    section h2 { color: var(--primary); margin-top: 0; font-size: 2.2rem; }
+    section p { font-size: 1.1rem; margin-bottom: 30px; }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    footer { background: #08172c; color: white; padding: 50px 40px; text-align: center; }
+    footer p { margin-top: 30px; font-size: 0.85rem; opacity: 0.8; }
+
+    @media (max-width: 768px) { section h2 { font-size: 2rem; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ApolloVX</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medical.html">Healthcare</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Contact ApolloVX</h2>
+  <p>Fill out the form below and an ApolloVX representative will contact you to provide a free vending solution evaluation for your facility.</p>
+
+  <form class="contact-form" action="https://formspree.io/f/xdadoolo" method="POST">
+    <input type="text" name="name" placeholder="Full Name" required />
+    <input type="email" name="email" placeholder="Email Address" required />
+    <input type="text" name="company" placeholder="Company or Facility Name" required />
+    <input type="text" name="location" placeholder="City, State" required />
+    <textarea name="message" rows="5" placeholder="Message or Notes" required></textarea>
+    <button type="submit">Submit Request</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 ApolloVX LLC Vending Solutions. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
