@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ApolloVX Vending Solutions</title>
-  <meta name="description" content="ApolloVX provides modern vending solutions for workplaces, healthcare, and commercial facilities. Reliable service, smart inventory, and cashless technology." />
+  <title>ApolloVX Vending Solutions | Smart Vending for Workplaces & Healthcare</title>
+  <meta name="description" content="ApolloVX provides modern, cashless vending solutions for offices, healthcare facilities, and commercial properties. Reliable service, smart inventory, and professional operations." />
 
   <style>
     :root {
@@ -31,11 +31,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     header h1 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin: 0;
+      letter-spacing: 0.5px;
     }
 
     nav a {
@@ -50,35 +54,42 @@
       background-size: cover;
       background-position: center;
       color: white;
-      padding: 100px 40px;
+      padding: 110px 40px;
       text-align: center;
     }
 
     .hero h2 {
-      font-size: 2.6rem;
+      font-size: 2.7rem;
       max-width: 900px;
       margin: 0 auto 20px;
     }
 
     .hero p {
       font-size: 1.2rem;
-      max-width: 700px;
+      max-width: 750px;
       margin: 0 auto 40px;
     }
 
     .btn {
       background: var(--accent);
       color: black;
-      padding: 14px 28px;
+      padding: 14px 30px;
       text-decoration: none;
       font-weight: 600;
       border-radius: 4px;
+      display: inline-block;
     }
 
     section {
-      padding: 80px 40px;
+      padding: 90px 40px;
       max-width: 1200px;
       margin: auto;
+    }
+
+    section h2 {
+      color: var(--primary);
+      margin-top: 0;
+      font-size: 2.2rem;
     }
 
     .grid {
@@ -89,7 +100,7 @@
 
     .card {
       background: var(--light);
-      padding: 30px;
+      padding: 32px;
       border-radius: 6px;
     }
 
@@ -98,44 +109,40 @@
       color: var(--primary);
     }
 
-    .about {
+    .highlight {
       background: #f0f3f8;
     }
 
-    footer {
+    .cta {
       background: var(--primary);
       color: white;
-      padding: 40px;
       text-align: center;
     }
 
-    footer p {
-      margin: 0;
-      font-size: 0.9rem;
-    }
+    .cta h2 { color: white; }
 
-    .contact-form {
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .contact-form button {
-      width: 100%;
-      padding: 14px;
-      background: var(--primary);
+    footer {
+      background: #08172c;
       color: white;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
+      padding: 50px 40px;
+    }
+
+    footer .grid {
+      gap: 20px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      opacity: 0.8;
     }
 
     @media (max-width: 768px) {
@@ -149,80 +156,90 @@
 <header>
   <h1>ApolloVX</h1>
   <nav>
-    <a href="#services">Solutions</a>
-    <a href="#medical">Healthcare</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="medical.html">Healthcare</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h2>Modern Vending Solutions Built for Today’s Workplaces</h2>
+  <h2>Smart Vending Solutions for Modern Environments</h2>
   <p>
     ApolloVX delivers reliable, cashless, and data-driven vending services for offices,
-    healthcare facilities, and commercial environments.
+    healthcare facilities, and commercial properties.
   </p>
-  <a href="#contact" class="btn">Request a Free Placement</a>
+  <a href="contact.html" class="btn">Request a Free Placement</a>
 </section>
 
-<section id="services">
-  <h2>Our Vending Solutions</h2>
+<section>
+  <h2>What We Do</h2>
   <div class="grid">
     <div class="card">
-      <h3>Smart Vending Machines</h3>
-      <p>Modern equipment with real-time inventory monitoring and cashless payments including Apple Pay and Google Pay.</p>
+      <h3>Smart Vending Technology</h3>
+      <p>Modern vending machines equipped with real-time inventory monitoring and cashless payments including Apple Pay, Google Pay, and credit cards.</p>
     </div>
     <div class="card">
-      <h3>Customized Product Mix</h3>
-      <p>Healthy snacks, beverages, and popular brands tailored to your location and customer preferences.</p>
+      <h3>Customized Product Selection</h3>
+      <p>Curated snack and beverage options tailored to your audience, including healthy and specialty choices.</p>
     </div>
     <div class="card">
-      <h3>Full-Service Operations</h3>
-      <p>Installation, maintenance, restocking, and support — all at no cost to your business.</p>
+      <h3>End-to-End Service</h3>
+      <p>Installation, maintenance, restocking, and support — fully managed by ApolloVX at no cost to your business.</p>
     </div>
   </div>
 </section>
 
-<section id="medical" class="about">
-  <h2>Vending Solutions for Healthcare Facilities</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Designed for Hospitals & Clinics</h3>
-      <p>ADA-compliant machines with hygienic surfaces and 24/7 reliability for patients, visitors, and staff.</p>
-    </div>
-    <div class="card">
-      <h3>Healthy & Functional Options</h3>
-      <p>Nutritious snacks, beverages, and wellness-oriented selections aligned with healthcare standards.</p>
-    </div>
-    <div class="card">
-      <h3>Operational Transparency</h3>
-      <p>Data-driven replenishment ensures consistent availability with minimal disruption.</p>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <h2>About ApolloVX</h2>
+<section class="highlight">
+  <h2>Healthcare & Medical Facility Solutions</h2>
   <p>
-    ApolloVX was founded with a mission to modernize vending through technology, reliability,
-    and exceptional service. We believe vending should be seamless, transparent, and beneficial
-    to the environments it serves.
+    ApolloVX specializes in vending solutions designed for hospitals, clinics, and medical campuses.
+    Our approach emphasizes hygiene, reliability, accessibility, and healthy options.
   </p>
+  <a href="medical.html" class="btn">Explore Healthcare Solutions</a>
 </section>
 
-<section id="contact" class="about">
-  <h2>Contact Us</h2>
-  <div class="contact-form">
-    <form action="https://formspree.io/f/yourID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Tell us about your location" required></textarea>
-      <button type="submit">Submit Request</button>
-    </form>
+<section>
+  <h2>Why ApolloVX</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Reliability First</h3>
+      <p>Proactive monitoring and scheduled replenishment ensure machines are stocked and operational.</p>
+    </div>
+    <div class="card">
+      <h3>Professional Operations</h3>
+      <p>We operate with transparency, consistency, and service-level accountability.</p>
+    </div>
+    <div class="card">
+      <h3>Technology-Driven</h3>
+      <p>Data insights guide inventory decisions, reduce downtime, and improve user satisfaction.</p>
+    </div>
   </div>
+</section>
+
+<section class="cta">
+  <h2>Upgrade Your Vending Experience</h2>
+  <p>Contact ApolloVX to discuss a free vending solution tailored to your location.</p>
+  <a href="contact.html" class="btn">Get Started</a>
 </section>
 
 <footer>
+  <div class="grid">
+    <div>
+      <h3>ApolloVX</h3>
+      <p>Modern vending solutions built for reliability, convenience, and performance.</p>
+    </div>
+    <div>
+      <h3>Solutions</h3>
+      <a href="medical.html">Healthcare Facilities</a>
+      <a href="index.html">Office & Commercial</a>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
   <p>© 2026 ApolloVX Vending Solutions. All rights reserved.</p>
 </footer>
 
