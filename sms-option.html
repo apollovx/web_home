@@ -20,7 +20,6 @@
     header h1 { font-size: 1.4rem; margin: 0; letter-spacing: 0.5px; }
     nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: 500; }
 
-
     .container {
         max-width: 900px;
         margin: auto;
@@ -44,6 +43,87 @@
         padding-bottom: 10px;
     }
 
+    /* ── NEW: Consent box ── */
+    .consent-box {
+        background: #f0f5ff;
+        border: 2px solid #0b1f3b;
+        border-radius: 8px;
+        padding: 24px 28px;
+        margin: 28px 0;
+    }
+
+    .consent-box h2 {
+        margin-top: 0;
+        color: #0b1f3b;
+        font-size: 1.1rem;
+    }
+
+    .consent-statement {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: #0b1f3b;
+        margin: 12px 0 16px;
+        line-height: 1.7;
+    }
+
+    .consent-channels {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 16px;
+    }
+
+    .consent-channels li {
+        padding: 4px 0;
+    }
+
+    .consent-channels li::before {
+        content: "✅ ";
+    }
+
+    .consent-links {
+        margin-top: 14px;
+        font-size: 0.92rem;
+        color: #555;
+    }
+
+    .consent-links a {
+        color: #0b1f3b;
+        font-weight: 600;
+    }
+
+    /* ── NEW: IVR script box ── */
+    .ivr-box {
+        background: #fffbf0;
+        border-left: 4px solid #f5a623;
+        border-radius: 4px;
+        padding: 16px 20px;
+        margin: 16px 0;
+        font-style: italic;
+        color: #333;
+    }
+
+    .ivr-box strong {
+        display: block;
+        font-style: normal;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #888;
+        margin-bottom: 6px;
+    }
+
+    /* ── NEW: Example message box ── */
+    .example-msg {
+        background: #f7f7f7;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 14px 18px;
+        font-family: monospace;
+        font-size: 0.95rem;
+        margin: 12px 0;
+        color: #333;
+    }
+
     .footer {
         margin-top: 40px;
         font-size: 14px;
@@ -63,66 +143,128 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
-</header>  
+</header>
 
 <div class="container">
 
-<div class="header">
-<h1>Apollo VX SMS Opt-In Process</h1>
+  <div class="header">
+    <h1>Apollo VX SMS &amp; Voice Opt-In Process</h1>
+  </div>
+
+  <p>
+    Apollo VX provides vending machine services and support. Customers may contact
+    our automated support phone line to report vending machine issues such as payment
+    problems, product not dispensing, or machine outages.
+  </p>
+
+  <!-- ── CONSENT BOX (new) ── -->
+  <div class="consent-box">
+    <h2>Consent to Receive SMS and Phone Calls</h2>
+    <p class="consent-statement">
+      By calling the Apollo VX support line and providing your phone number, you
+      expressly consent to receive transactional SMS messages and/or follow-up
+      phone calls from Apollo VX related to your vending machine service request.
+    </p>
+    <ul class="consent-channels">
+      <li>Transactional SMS confirmations related to your service request</li>
+      <li>Follow-up phone calls related to your service request (if applicable)</li>
+    </ul>
+    <p>
+      These communications are strictly transactional. No marketing or promotional
+      messages will ever be sent. Message frequency varies based on service activity.
+      Message and data rates may apply.
+    </p>
+    <div class="consent-links">
+      By using this service you agree to our
+      <a href="/terms">Terms &amp; Conditions</a> and
+      <a href="/privacy">Privacy Policy</a>.
+    </div>
+  </div>
+
+  <h2>How Customers Opt In</h2>
+
+  <p>
+    The opt-in process takes place over our automated support phone line (IVR system).
+    No phone numbers are collected without the caller first being informed of and
+    agreeing to the following disclosure:
+  </p>
+
+  <div class="ivr-box">
+    <strong>IVR System Disclosure (read to caller before number is collected):</strong>
+    "By providing your phone number, you consent to receive a transactional SMS
+    confirmation and/or a follow-up phone call from Apollo VX regarding your service
+    request. Message and data rates may apply. You may reply STOP at any time to
+    opt out of SMS notifications."
+  </div>
+
+  <p>The opt-in flow proceeds as follows:</p>
+
+  <ol>
+    <li>Customer calls the Apollo VX support phone number</li>
+    <li>The automated system presents the consent disclosure above before collecting any contact information</li>
+    <li>The customer voluntarily provides their phone number, which constitutes consent to receive SMS and/or voice follow-up</li>
+    <li>After the service request is submitted, a transactional SMS confirmation is sent to the number provided</li>
+    <li>If needed, a follow-up voice call may be placed to the same number regarding the service request</li>
+  </ol>
+
+  <h2>SMS Notification Details</h2>
+
+  <p>
+    SMS messages sent by Apollo VX are strictly transactional and relate only to
+    vending machine service requests.
+  </p>
+
+  <ul>
+    <li>Message frequency varies depending on service activity</li>
+    <li>Message and data rates may apply depending on your mobile carrier</li>
+    <li>Messages are never used for marketing or promotional purposes</li>
+  </ul>
+
+  <p><strong>Example message:</strong></p>
+  <div class="example-msg">
+    Apollo VX: Your vending machine service request has been received. Our team will
+    review the issue shortly. Reply STOP to opt out or HELP for assistance.
+  </div>
+
+  <h2>Voice Call Details</h2>
+
+  <p>
+    In addition to SMS, Apollo VX may place outbound follow-up calls to the phone
+    number provided during the support request. These calls are strictly transactional
+    and are only made to customers who initiated the original service request and
+    provided their phone number through the IVR system described above.
+  </p>
+
+  <h2>Opt-Out Instructions</h2>
+
+  <p>
+    Customers can opt out of SMS notifications at any time by replying:
+  </p>
+  <p><strong>STOP</strong></p>
+  <p>
+    To opt out of voice follow-up calls, please contact us directly at
+    <a href="mailto:support@apollovx.com">support@apollovx.com</a> or call
+    <a href="tel:+16196194737">(619) 619-4737</a>.
+  </p>
+
+  <h2>Help Instructions</h2>
+
+  <p>For SMS assistance, customers can reply:</p>
+  <p><strong>HELP</strong></p>
+
+  <p>Or contact us directly:</p>
+  <p>
+    Email: <a href="mailto:support@apollovx.com">support@apollovx.com</a><br>
+    Phone: <a href="tel:+16196194737">(619) 619-4737</a><br>
+    Website: <a href="https://apollovx.com">https://apollovx.com</a>
+  </p>
+
+  <div class="footer">
+    <a href="/privacy">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="/terms">Terms &amp; Conditions</a>
+  </div>
+
 </div>
-
-<p>
-Apollo VX provides vending machine services and support. Customers may contact
-our automated support phone line to report vending machine issues.
-</p>
-
-<h2>How Customers Opt In</h2>
-
-<p>
-Customers opt in to receive SMS notifications by calling the Apollo VX support
-phone line and reporting a vending machine issue.
-</p>
-
-<ul>
-<li>Customer calls the Apollo VX support phone number</li>
-<li>The system informs the caller that they may receive a transactional SMS message related to their request</li>
-<li>The customer voluntarily provides their phone number during the support process</li>
-<li>A confirmation SMS message is sent after the request is submitted</li>
-</ul>
-
-<h2>SMS Notification Details</h2>
-
-<p>
-SMS messages sent by Apollo VX are strictly transactional and relate to vending
-machine service requests.
-</p>
-
-<ul>
-<li>Message frequency varies depending on service activity</li>
-<li>Message and data rates may apply depending on your mobile carrier</li>
-<li>Messages are not used for marketing or promotional purposes</li>
-</ul>
-
-<h2>Opt-Out Instructions</h2>
-
-<p>Customers can opt out at any time by replying:</p>
-
-<p><strong>STOP</strong></p>
-
-<h2>Help Instructions</h2>
-
-<p>For assistance, customers can reply:</p>
-
-<p><strong>HELP</strong></p>
-
-<p>Or contact us:</p>
-
-<p>
-Email: <a href="mailto:support@apollovx.com">support@apollovx.com</a><br>
-Website: <a href="https://apollovx.com">https://apollovx.com</a>
-</p>
-</div>
-
 
 
 <footer class="apollo-footer">
@@ -132,21 +274,16 @@ Website: <a href="https://apollovx.com">https://apollovx.com</a>
 <!-- Logo / Brand -->
 <div class="footer-brand">
 <img src="/images/logo.png" alt="Apollo Vending Experience Logo" class="footer-logo">
-
 <h3>Apollo Vending Experience</h3>
-
 <p>
 Modern vending solutions delivering convenience, reliability,
 and smart service for workplaces, schools, and public spaces.
 </p>
 </div>
 
-
 <!-- Quick Links -->
 <div class="footer-links">
-
 <h4>Quick Links</h4>
-
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/medical">Healthcare</a></li>
@@ -155,181 +292,71 @@ and smart service for workplaces, schools, and public spaces.
 <li><a href="/terms">Terms & Conditions</a></li>
 <li><a href="/privacy">Privacy Policy</a></li>
 <li><a href="/sms-option">SMS Option</a></li>
-
 </ul>
-
 </div>
-
 
 <!-- Contact -->
 <div class="footer-contact">
-
 <h4>Customer Support</h4>
-
-<p>
-📞 Service Phone<br>
-<a href="tel:+16196194737">(619) 619-4737</a>
-</p>
-
-<p>
-✉ Email<br>
-<a href="mailto:support@apollovx.com">support@apollovx.com</a>
-</p>
-
-<p>
-🌐 Website<br>
-<a href="https://apollovx.com">apollovx.com</a>
-</p>
-
+<p>📞 Service Phone<br><a href="tel:+16196194737">(619) 619-4737</a></p>
+<p>✉ Email<br><a href="mailto:support@apollovx.com">support@apollovx.com</a></p>
+<p>🌐 Website<br><a href="https://apollovx.com">apollovx.com</a></p>
 </div>
-
 
 <!-- Location -->
 <div class="footer-location">
-
 <h4>Service Area</h4>
-
 <p>Serving San Diego County</p>
-
-<iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d428221.79560916295!2d-117.17565373031893!3d33.017409183906764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dbeb3023ff601d%3A0x350dfd2beb800728!2sSan%20Diego%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1773697519270!5m2!1sen!2sus" 
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d428221.79560916295!2d-117.17565373031893!3d33.017409183906764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dbeb3023ff601d%3A0x350dfd2beb800728!2sSan%20Diego%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1773697519270!5m2!1sen!2sus"
   width="100%"
   height="150"
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy" 
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
   referrerpolicy="no-referrer-when-downgrade">
 </iframe>
-
 </div>
 
 </div>
-
 
 <!-- Social Media -->
 <div class="footer-social">
-
 <a href="https://www.facebook.com/groups/1485285179002870/user/61572854593740">Facebook</a>
 <a href="#">Instagram</a>
 <a href="#">LinkedIn</a>
-
 </div>
-
 
 <!-- Bottom -->
 <div class="footer-bottom">
-
 <p>© 2026 Apollo Vending Experience. All rights reserved.</p>
-
 <p>
 <a href="/privacy.html">Privacy Policy</a> |
 <a href="/terms.html">Terms & Conditions</a>
 </p>
-
 </div>
 
 </footer>
 
-
 <style>
-
-.apollo-footer{
-background:#0a1c34;
-color:white;
-font-family:Arial, sans-serif;
-padding-top:50px;
-}
-
-.footer-main{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:40px;
-padding:0 20px;
-}
-
-.footer-logo{
-width:80px;
-margin-bottom:10px;
-}
-
-.footer-brand h3{
-color:#d4af37;
-margin-bottom:10px;
-}
-
-.footer-links h4,
-.footer-contact h4,
-.footer-location h4{
-color:#d4af37;
-margin-bottom:10px;
-}
-
-.footer-links ul{
-list-style:none;
-padding:0;
-}
-
-.footer-links li{
-margin-bottom:8px;
-}
-
-.footer-links a{
-color:#ddd;
-text-decoration:none;
-}
-
-.footer-links a:hover{
-color:#d4af37;
-}
-
-.footer-contact a{
-color:#ddd;
-text-decoration:none;
-}
-
-.footer-contact a:hover{
-color:#d4af37;
-}
-
-.footer-social{
-text-align:center;
-margin-top:40px;
-}
-
-.footer-social a{
-margin:0 15px;
-color:#ddd;
-text-decoration:none;
-font-weight:bold;
-}
-
-.footer-social a:hover{
-color:#d4af37;
-}
-
-.footer-bottom{
-border-top:1px solid rgba(255,255,255,0.2);
-margin-top:40px;
-padding:20px;
-text-align:center;
-font-size:14px;
-color:#bbb;
-}
-
-.footer-bottom a{
-color:#bbb;
-text-decoration:none;
-}
-
-.footer-bottom a:hover{
-color:#d4af37;
-}
-
+.apollo-footer { background:#0a1c34; color:white; font-family:Arial, sans-serif; padding-top:50px; }
+.footer-main { max-width:1200px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:40px; padding:0 20px; }
+.footer-logo { width:80px; margin-bottom:10px; }
+.footer-brand h3 { color:#d4af37; margin-bottom:10px; }
+.footer-links h4, .footer-contact h4, .footer-location h4 { color:#d4af37; margin-bottom:10px; }
+.footer-links ul { list-style:none; padding:0; }
+.footer-links li { margin-bottom:8px; }
+.footer-links a { color:#ddd; text-decoration:none; }
+.footer-links a:hover { color:#d4af37; }
+.footer-contact a { color:#ddd; text-decoration:none; }
+.footer-contact a:hover { color:#d4af37; }
+.footer-social { text-align:center; margin-top:40px; }
+.footer-social a { margin:0 15px; color:#ddd; text-decoration:none; font-weight:bold; }
+.footer-social a:hover { color:#d4af37; }
+.footer-bottom { border-top:1px solid rgba(255,255,255,0.2); margin-top:40px; padding:20px; text-align:center; font-size:14px; color:#bbb; }
+.footer-bottom a { color:#bbb; text-decoration:none; }
+.footer-bottom a:hover { color:#d4af37; }
 </style>
-
-
 
 </body>
 </html>
