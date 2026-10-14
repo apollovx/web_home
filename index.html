@@ -62,7 +62,9 @@ p{margin:0}
 .nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ivory)}
 .brand:hover{color:var(--ivory)}
-.brand span{font-family:var(--display);font-weight:800;font-size:25px;letter-spacing:-.02em}
+.logo{height:60px;width:auto;display:block}
+.foot-logo{height:64px;width:auto;display:block;margin-bottom:16px}
+@media (max-width:760px){.logo{height:44px}}
 .nav-links{display:flex;gap:36px;list-style:none;margin:0;padding:0}
 .nav-links a{color:#D5DCE6;text-decoration:none;font-weight:500;font-size:16px}
 .nav-links a:hover{color:#fff}
@@ -212,9 +214,7 @@ footer{background:var(--navy-deep);color:var(--on-navy-2);padding:72px 0 40px;fo
 <header class="site-header">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="ApolloVX home">
-      <!-- Replace this SVG with your logo: <img src="/images/logo.png" alt="ApolloVX" height="40"> -->
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#F0773A" stroke-width="2" aria-hidden="true"><ellipse cx="18" cy="18" rx="16" ry="7" transform="rotate(-25 18 18)"/><circle cx="18" cy="18" r="6" fill="#F6F4EF" stroke="none"/></svg>
-      <span>ApolloVX</span>
+      <img class="logo" src="/images/logo.png" alt="Apollo VX" width="143" height="52">
     </a>
     <nav aria-label="Main">
       <ul class="nav-links">
@@ -534,7 +534,7 @@ footer{background:var(--navy-deep);color:var(--on-navy-2);padding:72px 0 40px;fo
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="foot-brand">ApolloVX</div>
+        <img class="foot-logo" src="/images/logo.png" alt="Apollo VX" width="176" height="64" loading="lazy">
         <p style="max-width:34ch">Apollo Vending Experience: traditional and AI-powered vending for healthcare, airports, government and workplaces.</p>
       </div>
       <div>
