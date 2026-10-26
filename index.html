@@ -493,13 +493,12 @@ footer{background:var(--navy-deep);color:var(--on-navy-2);padding:72px 0 40px;fo
       </div>
 
       <div class="form-card">
-        <!--
-          FORM DELIVERY: By default, submitting opens the visitor's email app with a
-          pre-filled message to support@apollovx.com. To receive submissions directly
-          instead, set FORM_ENDPOINT below to a form service URL (e.g. Formspree,
-          Getform, Basin) or your own server endpoint that accepts a POST.
-        -->
-        <form id="placement-form" novalidate>
+        <!-- Submissions go to Formspree, which emails them to the address on your Formspree account.
+             After a successful send, visitors are taken to /thank-you.html. -->
+        <form id="placement-form" action="https://formspree.io/f/xjyyyrng" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New free placement request (apollovx.com)">
+          <!-- Spam trap: real visitors never see or fill this field -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <fieldset>
             <legend>Facility type</legend>
             <div class="pills">
@@ -518,13 +517,9 @@ footer{background:var(--navy-deep);color:var(--on-navy-2);padding:72px 0 40px;fo
           </div>
           <label class="field">Tell us about your location<textarea name="message" rows="4" placeholder="Address, approximate daily foot traffic, hours, and any space or power constraints"></textarea></label>
           <p class="form-error" id="form-error" role="alert">Please add your name, organization and a valid email.</p>
-          <button class="btn btn-dark" type="submit">Request my free placement plan</button>
+          <button class="btn btn-dark" id="submit-btn" type="submit">Request my free placement plan</button>
           <p class="form-note">We'll only use your details to respond to this request.</p>
         </form>
-        <div class="thanks" id="thanks" role="status" tabindex="-1">
-          <h3>Request sent. We'll be in touch.</h3>
-          <p>A representative will reach out to schedule your free site assessment. Need us sooner? Call (619) 619-4737.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -559,9 +554,8 @@ footer{background:var(--navy-deep);color:var(--on-navy-2);padding:72px 0 40px;fo
 
 <script>
 (function(){
-  // Set this to a form endpoint URL to receive submissions directly; leave empty to use email.
-  var FORM_ENDPOINT = "";
-  var TO_EMAIL = "support@apollovx.com";
+  var FORM_ENDPOINT = "https://formspree.io/f/xjyyyrng";
+  var THANK_YOU_PAGE = "/thank-you.html";
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -584,12 +578,12 @@ footer{background:var(--navy-deep);color:var(--on-navy-2);padding:72px 0 40px;fo
   // Form
   var form = document.getElementById("placement-form");
   var err = document.getElementById("form-error");
-  var thanks = document.getElementById("thanks");
+  var submitBtn = document.getElementById("submit-btn");
+  var btnLabel = submitBtn.textContent;
 
-  function showThanks(){
-    form.style.display = "none";
-    thanks.style.display = "block";
-    thanks.focus();
+  function showError(msg){
+    err.textContent = msg;
+    err.style.display = "block";
   }
 
   form.addEventListener("submit", function(e){
@@ -597,32 +591,23 @@ footer{background:var(--navy-deep);color:var(--on-navy-2);padding:72px 0 40px;fo
     var d = new FormData(form);
     var email = (d.get("email") || "").trim();
     if(!(d.get("name")||"").trim() || !(d.get("organization")||"").trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-      err.style.display = "block";
+      showError("Please add your name, organization and a valid email.");
       return;
     }
     err.style.display = "none";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
 
-    if(FORM_ENDPOINT){
-      fetch(FORM_ENDPOINT, { method:"POST", body:d, headers:{ "Accept":"application/json" } })
-        .then(function(r){ if(!r.ok) throw new Error(); showThanks(); })
-        .catch(function(){
-          err.textContent = "Your request didn't send. Please call (619) 619-4737 or email " + TO_EMAIL + ".";
-          err.style.display = "block";
-        });
-      return;
-    }
-
-    var body =
-      "Facility type: " + d.get("facility") + "\n" +
-      "Name: " + d.get("name") + "\n" +
-      "Organization: " + d.get("organization") + "\n" +
-      "Email: " + email + "\n" +
-      "Phone: " + (d.get("phone") || "") + "\n\n" +
-      "About the location:\n" + (d.get("message") || "");
-    window.location.href = "mailto:" + TO_EMAIL +
-      "?subject=" + encodeURIComponent("Free placement request: " + d.get("organization")) +
-      "&body=" + encodeURIComponent(body);
-    showThanks();
+    fetch(FORM_ENDPOINT, { method:"POST", body:d, headers:{ "Accept":"application/json" } })
+      .then(function(r){
+        if(!r.ok) throw new Error();
+        window.location.href = THANK_YOU_PAGE;
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = btnLabel;
+        showError("Your request didn't send. Please try again, or call (619) 619-4737 or email support@apollovx.com.");
+      });
   });
 })();
 </script>
